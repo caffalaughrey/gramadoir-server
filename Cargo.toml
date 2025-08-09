@@ -1,0 +1,18 @@
+[package]
+name = "gramadoir"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+libperl-rs = "=0.3.0"
+libperl-sys = "=0.3.0"
+actix-web = "4.11"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+quick-xml = "0.38"
+
+[build-dependencies]
+libperl-config = "=0.3.0"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(perlapi_ver30)', 'cfg(perl_useithreads)'] }
